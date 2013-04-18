@@ -1,0 +1,83 @@
+<!-- START:head -->
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Fruit & Veg Online</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<!-- END:head -->
+<body class="<%= controller.controller_name %>">
+<div id=""
+<div style="float:right; padding:20px 30px;">
+  <% if session[:user_id] %>
+      Hi <%= link_to current_user.name, current_user, :title => "click to view your account" %>
+      <%= link_to "Sign out", logout_path %>
+  <% else %>
+      <%= link_to "Sign in", login_path %>  or
+      <%= link_to "Create Account", new_user_path   %>
+  <% end %>
+</div>
+<div style="float:right; clear:both; padding-right:50px;">
+  <%= form_tag products_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search_query, params[:search_query] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+  <% end %>
+</div>
+
+
+
+<div id="banner" style="clear:both;">
+  <%= link_to image_tag("logo5.png", :width => 488, :height => 156), store_index_url %>
+
+  <ul id="menu">
+    <li><a href="/store/index">Home</a><li>
+    <li><a href="/about">About Us</a></li>
+    <li><a href="http://www..../news">Special Offers</a></li>
+    <li><a href="http://www..../news">News</a></li>
+    <li><a href="/contact">Contact Us</a></li>
+  </ul>
+
+</div>
+<div id="columns">
+  <div id="side">
+
+
+    <h4>Start Shopping!</h4>
+      <ul>
+      <li><a href="/categories/1">Fruit</a>
+      <li><a href="/categories/2">Vegetables</a>
+      <li><a href="/products">All Products</a>
+    </ul>
+
+    <!-- START:hidden_div -->
+    <% if @cart %>
+        <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+            <%= render @cart %>
+        <% end %>
+    <% end %>
+    <!-- END:hidden_div -->
+
+
+    <!-- START_HIGHLIGHT -->
+
+    <% if session[:user_id] and current_user.admin %>
+        <h3>Admin Area </h3>    <ul>
+          <li><%= link_to 'Orders',   orders_path   %></li>
+          <li><%= link_to 'Categories',   categories_path   %></li>
+          <li><%= link_to 'Products', products_path %></li>
+          <li><%= link_to 'Users',    users_path    %></li>
+        </ul>
+        <%= button_to 'Logout', logout_path, method: :delete   %>
+    <% end %>
+    <!-- END_HIGHLIGHT -->
+  </div>
+  <div id="main">
+    <%= yield %>
+  </div>
+</div>
+</body>
+</html>

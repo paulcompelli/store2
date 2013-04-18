@@ -1,0 +1,20 @@
+<h4>Your Basket</h4>
+
+<% if @cart.item_count == 1 %>
+    <p>Contains <%= @cart.item_count %> item</p>
+ <% else %>
+<p>Contains <%= @cart.item_count %> items</p>
+    <% end %>
+<!-- Paul's code -->
+<table>
+
+  <%= render(cart.line_items) %>
+  <tr class="total_line">
+    <td colspan="2">Total</td>
+    <td class="total_cell"><%= number_to_currency(cart.total_price, :unit =>  '&euro;') %></td>
+  </tr>
+
+</table>
+<%= button_to "Checkout", new_order_path, method: :get %>
+<%= button_to 'Empty Basket', cart, method: :delete,
+              data: { confirm: 'Are you sure you want to enpty your Basket?' } %>
