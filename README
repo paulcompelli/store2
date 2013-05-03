@@ -1,1 +1,61 @@
-Hello World!!
+Server-Side Web Technologies Project
+Lecturer: Wesley Gorman
+Module marks allocation: 70%
+ 
+Project Teams
+Projects are to be done in teams of two people. 
+Each person will be marked individually. Therefore you will be expected to submit a breakdown of the work by person in your final submission. 
+If you are using Git/Subversion or some other version control software – then access to this will allow for a more accurate assessment of each individual – so please include details of the repository used for the project.
+ 
+Project Description
+The aim of this project is to design and develop an e-commerce based web application for the domain/business of your choice (e.g. an online music shop). 
+
+This e-commerce site will allow users to log onto the site and browse the inventory by various attributes, e.g. product name, manufacturer, model etc. A user can register with your site to make allow for purchases on the site. Once registered, the user can add items to his or her cart. Items can be added and removed by the user as he or she browses the inventory. Once the user is ready to make a purchase the user is brought to a payment page where details on what is in the user’s cart is given to the user and a total price is also provided. The user can then make a payment for the purchases. 
+ 
+Project Proposal Definition
+A project definition must be first defined detailing the following [1000 word max]:
+
+1.	Description of the domain (i.e. field of business) your e-commerce application will be developed to serve. 
+a.	This should include a conceptual description of the domain that identifies the core concepts/entities (things you need to hold information about). 
+2.	Specific requirements of the domain – functions, tasks, processes etc. - that will be covered by your application. (This is equivalent to the project scope document in project management).
+
+3.	Proposed web application specification
+a.	Features in web app (to the level of detail required to begin implementation) 
+and 
+b.	how the user navigates the web app (a diagram proposing how the web app will be structed and the workflow involved for core functions).
+
+Required Elements
+The web application will be implemented using the Rails 3.0 framework. 
+
+This site should implement the following features:
+
+1.	A database manages inventory. Web application must connect and query the database to display inventory details. You are required to create this database. 
+2.	Users must register with the site to buy items. Database manages user details. 
+3.	Unregistered users can view content but cannot buy items.
+4.	Users must be able to buy more than one item in a given session.
+5.	Log in area must be provided on all screens for a user who is not logged in. 
+6.	The products the user has put into his or her “cart” and a subtotal should be displayed to the user at all times. 
+7.	When a user has bought an item it must be recorded in the database.
+8.	Ensure your website is secure by:
+a.	Taking measures against SQL/HTML injection. 
+b.	Taking measures against redirection. 
+c.	Ensuring proper session management. 
+d.	User credentials are protected at database level using encryption.
+ 
+Your website should have the minimal number of pages of the following:
+1.	Welcome page - welcoming the user, provides user with information on their last visit and what they bought. 
+2.	Profile page - details on user, which can be edited by user. Purchase history of user is also provided on this page. 
+3.	Page displaying inventory - inventory can be browsed in a variety of ways and can also be searched. 
+4.	Registration page - this is where users log into the page 
+5.	Check out page - detailing the number of each item being bought and a total price. 
+6.	Provisions must be made to allow the user to add inventory items to a cart. 
+7.	Thank you page - after a purchase is made.
+
+You must implement your project iteratively, in two week blocks. At the end of each iteration you must submit your latest code and a retrospective document [max 500 words] based on an honest conversation between the two people on the project team. The retrospective should examine "what is going well" and "what is going not so well" and give two actions (or more) for each of these. 
+ 
+Examination Method
+You will be expected to present your web application to demonstrate your understanding of the solution you have implemented. A short 1,500 word technical report must also be submitted describing the implementation, issues encountered/overcome, decisions made during implementation and explanation of any proposed features not implemented. You must submit your code along with your technical report. 
+ 
+All work must be your own. Any examples, tutorials used must be detailed in your technical report.
+ 
+ 
